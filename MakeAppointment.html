@@ -10,7 +10,7 @@
     <script class="u-script" type="text/javascript" src="project.js" defer=""></script>
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
   </head>
   <body class="u-body"><header class="u-clearfix u-header" id="sec-9f38" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
@@ -78,12 +78,15 @@
                           <label for="date-c997" class="u-form-control-hidden u-label">Date</label>
                           <input type="date" placeholder="" id="date-c997" name="date" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-1" required="">
                         </div>
+                        <section>
+                          <ul id="message-section" style='color:red'></ul>
+                        </section>
                         <div class="u-align-left u-form-group u-form-submit">
                           <a href="#" class="u-border-2 u-border-black u-btn u-btn-submit u-button-style u-hover-black u-none u-text-black u-text-hover-white u-btn-2">SELECT</a>
-                          <input type="submit" value="submit" class="u-form-control-hidden">
+                          <input type="submit" value="submit" class="u-form-control-hidden" id="appointment">
                         </div>
-                        <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-                        <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
+                        <!-- <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div> -->
+                        <!-- <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div> -->
                         <input type="hidden" value="" name="recaptchaResponse">
                       </form>
                     </div>
@@ -108,5 +111,32 @@
       <span>Copyright © 2021 All Rights Reserved by Team MEDIcare.</span>
     </p> 
   </section>
+  <script>
+    $('#appointment').click((event) => {
+      event.preventDefault();
+      let token =  localStorage.getItem('token');
+      let date = $('input[name="date"]').val();
+        var request = $.ajax({
+          url: "http://127.0.0.1:8000/api/appointments?",
+          method: "POST",
+          headers: {
+            "Authorization": "Bearer " + token
+          },
+          data: {
+            date : date
+          },
+        });
+        
+        request.done(function( response ) {
+          $('#message-section').append("<li style='color:green'>"+response.message+'</li>');
+        });
+        
+        request.fail(function( jqXHR, textStatus ) {
+          let error = JSON.parse(jqXHR.responseText);
+          if(error.code == 401) window.location.href = 'login.html'
+          $('#message-section').append('<li>'+error.message+'</li>');
+        });
+    });
+  </script>
   </body>
 </html>
