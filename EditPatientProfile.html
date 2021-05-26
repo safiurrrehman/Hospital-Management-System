@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <title>Patient Profile</title>
+    <title>Edit Patient Profile</title>
     <link rel="stylesheet" href="project.css" media="screen">
     <link rel="stylesheet" href="Home.css" media="screen">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen">
@@ -11,20 +11,6 @@
     <script class="u-script" type="text/javascript" src="project.js" defer=""></script>
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i|Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Oswald:200,300,400,500,600,700">
-
-    <!-- Font Awesome -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
-<!-- MDB -->
-<link
-  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css"
-  rel="stylesheet"
-/>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
 
   <body class="u-body"><header class="u-clearfix u-header u-header" id="sec-9f38"><div class="u-clearfix u-sheet u-sheet-1">
@@ -68,74 +54,117 @@
     
     <section class="u-clearfix u-image u-valign-middle-lg u-section-1" id="carousel_8865">
       <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
-        <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-26 u-layout-cell-2">
+        <div class="u-layout">
+          <div class="u-layout-row">
+            <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-26 u-layout-cell-2">
               <div class="u-container-layout">
                 <div class="container">
-                  <div class="title">PATIENT PROFILE</div>
-                  <div class="row d-flex justify-content-center">
-                    <div class="col-md-10 mt-5 pt-5">
-                      <div class="row z-depth-3">
-                        <div class="col-sm-4 bg-danger rounded-left">
-                          <div class="card-block text-center text-white">
-                            <i class=" fa fa-user-tie fa-7x mt-5"></i>
-                            <h2 class="font-weight-bold mt-4">Patient Name</h2>
-                            <p>ID No: </p>
-                            <a href="EditPatientProfile.html"><i class=" fa fa-edit fa-2x mb-4 text-white"></i></a>
+                    <div class="title">EDIT PATIENT PROFILE</div>
+                    <div class="info">Kindly fill out the below form to complete the patient details.</div>
+                    <div class="content">
+                      <h2 class="heading1"><i style="color: #ff1456" class="fa fa-arrow-circle-right"></i>&nbsp;PATIENT PERSONAL DETAILS</h2>
+                      <form action="#">
+                        <div class="user-details">
+                            
+                          <div class="input-box">
+                            <span class="details">Patient Name</span>
+                            <input type="text" placeholder="Patient Name" required>
+                          </div>
+
+                          <div class="input-box">
+                            <span class="details">Patient Identification Number</span>
+                            <input type="text" placeholder="Patient ID No." required>
+                          </div>
+
+                          <div class="input-box">
+                            <span class="details">Phone Number</span>
+                            <input type="text" placeholder="Patient Phone No." required>
+                          </div>
+
+                          <div class="input-box">
+                            <span class="details">Age</span>
+                            <input type="text" placeholder="Patient Age" required>
+                            <br>
+                          </div>
+
+                          <div class="input-box">
+                            <span class="details">Address</span>
+                            <textarea rows="5" cols="90" class="form-control" required></textarea>
                           </div>
                         </div>
-                        <div class="col-sm-8 bg-white rounded-right">
-                          <h3 class="mt-3 text-center text-dark">Information</h3>
-                          <hr class="bg-danger">
-                          <div class="row">
-                            <div class="col-sm-6">
-                              <p class="font-weight-bold text-muted">Email:</p>
-                              <h6 class="text-muted">patient1@gmail.com</h6>
-                            </div>
-                            <div class="col-sm-6">
-                                <p class="font-weight-bold text-muted">Phone:</p>
-                                <h6 class="text-muted">123 456 789</h6>
-                            </div>
+
+                        <div class="gender-details">
+                          <span class="details">Gender</span>
+                          <br>
+                          <label class="radio">
+                            <span class="radio__input">
+                              <input type="radio" name="radio" />
+                              <span class="radio__control"></span>
+                            </span>
+                            <span class="radio__label"> Male &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                          </label>
+
+                          <label class="radio">
+                            <span class="radio__input">
+                              <input type="radio" name="radio" />
+                              <span class="radio__control"></span>
+                            </span>
+                            <span class="radio__label"> Female &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                          </label>
+
+                          <label class="radio">
+                            <span class="radio__input">
+                              <input type="radio" name="radio" />
+                              <span class="radio__control"></span>
+                            </span>
+                            <span class="radio__label">Prefer Not to Say</span>
+                          </label>
+                        </div>
+                      </form>
+
+                      <h2 class="heading1"><i style="color: #ff1456" class="fa fa-arrow-circle-right"></i>&nbsp;PATIENT MEDICAL HISTORY</h2>
+                      <form>
+                        <div class="user-details">
+                          <div class="input-box">
+                            <span class="details">Consultant Doctor Name</span>
+                            <input type="text" placeholder="Doctor Name" required>
                           </div>
-                          <div class="row">
-                            <div class="col-sm-6">
-                              <p class="font-weight-bold text-muted">Age:</p>
-                              <h6 class="text-muted">30</h6>
-                            </div>
-                            <div class="col-sm-6">
-                                <p class="font-weight-bold text-muted">Gender:</p>
-                                <h6 class="text-muted">Male </h6>
-                            </div>
+                          <div class="input-box">
+                            <span class="details">Current Medical Condition</span>
+                            <textarea rows="5" cols="90" class="form-control" required></textarea>
                           </div>
-                          <h4 class="mt-3 text-dark">Medical History</h4>
-                          <hr class="bg-danger">
-                          <div class="row">
-                            <div class="col-sm-6">
-                              <h5 class="font-weight-bold text-muted">Consultant Doctor Name</h5>
-                              <p class="text-muted">Doctor Name Goes Here</p>
-                            </div>
+                          <div class="input-box">
+                            <span class="details">Current Medications,Herbal Supplements & Vitamins</span>
+                            <textarea rows="5" cols="90" class="form-control" required></textarea>
                           </div>
-                          <div class="row">
-                            <div class="col-sm-6">
-                                <h5 class="font-weight-bold text-muted">Current Medical Condition</h5>
-                                <p class="text-muted">It Goes Here</p>
-                            </div>
+                          <div class="input-box">
+                            <span class="details">Allergies/Adverse Reactions to Treatment</span>
+                            <textarea rows="5" cols="90" class="form-control" required></textarea>
                           </div>
-                          <div class="row">
-                            <div class="col-sm-6">
-                                <h5 class="font-weight-bold text-muted">Current Medications</h5>
-                                <p class="text-muted">Curr Med Goes Here</p>
-                            </div>
+                          <div class="upload-repo">
+                            <label for="formFileMultiple" class="form-label">Upload Medical Documents and Test Reports</label>
+                            <input class="form-control" type="file" id="formFileMultiple" multiple />
+                            <p><bold>Note: </bold> You can upload multiple files Here.</p>
+                          </div>
+                          <div class="input-box">
+                            <span class="details">Clinical Comments</span>
+                            <textarea rows="5" cols="90" class="form-control" required></textarea>
                           </div>
                         </div>
-                      </div> 
+                        <div class="button">
+                          <input type="submit" value="SUBMIT">
+                        </div>
+                      </form>
                     </div>
                   </div>
-                </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
     </section>
-
+    
+    
     
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-e590"><div class="u-clearfix u-sheet u-sheet-1">
       <p class="u-small-text u-text u-text-variant u-text-1"><b>ABOUT</b><br/>This website belongs to the repective owner. Created by the students of NUST, Islamabad.</p>
